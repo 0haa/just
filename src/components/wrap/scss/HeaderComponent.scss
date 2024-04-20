@@ -1,0 +1,144 @@
+/* 헤더 */
+#header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+    z-index: 3;
+    border-bottom: 1px solid #000;
+
+    /* 로고 */
+    .left {width: 200px;height: 100%;display: flex;align-items: center;
+        h1 {width:100%;height: 40px;
+            a {
+                font-size: 24px;
+                font-weight: 600;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+
+                span{
+                    &:nth-child(1) {
+                        color: #5ac;
+                    }
+                    &:nth-child(2) {
+                        margin-left: 5px;
+                        color: #c5a;
+                    }
+                }
+            }
+        }
+    }
+    /* 네비게이션 =>  메인메뉴 */
+    .right {
+        width: 1000px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+        justify-content: flex-end;
+        aside{
+            display: flex;
+            gap: 10px;
+            a{
+                font-size: 16px;
+                &:hover{
+                    color: #f3a6f7;
+                    font-weight: 900;
+                    transition: 0.3s;
+                }
+            }
+            i{
+                color: #dedede;
+            }
+        }
+        #nav {
+            width:700px;
+            & > ul {
+                display: flex;width:100%;
+                &> li {
+                    width:25%;
+                    border-top:1px solid #ddd;
+                    border-bottom:1px solid #ddd;
+                    border-left:1px solid #ddd;
+
+                    &:last-child {border-right:1px solid #ddd;}
+
+                    a {
+                        width: 100%;display: flex;align-items: center;justify-content: center;
+                        height: 50px;
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: #000;
+                        transition: all 0.3s;
+                        background: #fff;
+                        &:hover {
+                            background: #2c2a29;
+                            color: #669900;
+                        }   
+                        &.on {
+                            background: #2c2a29;
+                            color: #669900;
+                        }   
+                    }
+                    /* 메인버튼 색상 */
+                    &:nth-child(1) > a.on{background: #cfafff;}
+                    &:nth-child(2) > a.on{background: #c7e7ff;}
+                    &:nth-child(3) > a.on{background: #ffe8af;}
+                    &:nth-child(4) > a.on{background: #ffafc2;}
+
+                    /* 서브메뉴 */
+                    /* 스타벅스 서브메뉴와 같은 전체메뉴 */
+                    .sub {
+                        /* display: none; */
+                        position: absolute;
+                        top:100px;
+                        left:0;
+                        width: 100%;
+                        background: #2c2a29;
+
+                        &.sub1 {background: #cfafff;}
+                        &.sub2 {background: #c7e7ff;}
+                        &.sub3 {background: #ffe8af;}
+                        &.sub4 {background: #ffafc2;}
+
+                        .sub-container {
+                            width:700px;
+                            margin: 0 20px 0 auto;
+
+                            &> ul {
+                                width:100%;display: flex;padding: 20px 0;
+                                &> li {/* 4칸 */
+                                    width:25%;
+                                    &> ul {
+                                        width:100%;
+                                        &> li {
+                                            width:100%;
+                                            a {
+                                                color:#999;
+                                                display: flex;
+                                                height: 30px;
+                                                width: 100%;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                &:hover {
+                                                    background: #666;
+                                                    color: #fff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }
+    
+}
